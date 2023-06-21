@@ -6,8 +6,6 @@ import Loading from './Loading'
 import Product from './Product'
 
 const FeaturedProducts = () => {
- 
-
   return(
     <Wrapper className='section'>
       <div className="title">
