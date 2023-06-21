@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { useFilterContext } from '../context/filter_context'
+import {useFilterContext } from '../context/filter_context'
 import { getUniqueValues, formatPrice } from '../utils/helpers'
 import { FaCheck } from 'react-icons/fa'
 
@@ -116,6 +116,7 @@ const Wrapper = styled.section`
     margin-bottom: 1.25rem;
     h5 {
       margin-bottom: 0.5rem;
+      text-align: start;
     }
   }
   .search-input {
@@ -149,6 +150,9 @@ const Wrapper = styled.section`
     border-radius: var(--radius);
     border-color: transparent;
     padding: 0.25rem;
+    width: 70%;
+    display: flex;
+    justify-content: flex-start;
   }
   .colors {
     display: flex;
@@ -187,6 +191,7 @@ const Wrapper = styled.section`
   }
   .price {
     margin-bottom: 0.25rem;
+    text-align: left;
   }
   .shipping {
     display: grid;
