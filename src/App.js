@@ -2,7 +2,7 @@ import React from 'react'
 import './App.css';
 import {Route, Routes} from 'react-router-dom'
 import Footer from './components/Footer'
-import Nav from './components/Navbar';
+import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
 
 import{
@@ -18,7 +18,7 @@ import{
 function App() {
   return (
     <div>
-      <Nav/>
+      <Navbar/>
       <Sidebar/>
        <Routes>
          <Route path='/' element={<HomePage/>} />

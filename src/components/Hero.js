@@ -8,7 +8,7 @@ const Hero = () => {
   return(
     <Wrapper className='section'>
        <article className='content'>
-          <h1>
+          <h1 className='ml-12'>
             design your <br/> comfort zone
           </h1>
           <p>
