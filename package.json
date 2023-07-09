@@ -21,7 +21,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test":  "react-scripts test",
+    "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -43,6 +43,6 @@
     ]
   },
   "devDependencies": {
-    "netlify-cli": "^12.5.0"
+    "netlify-cli": "^15.8.1"
   }
 }
