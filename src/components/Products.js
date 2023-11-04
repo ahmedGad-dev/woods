@@ -1,14 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
-import Filters from '../components/Filters'
-import Sort from '../components/Sort'
-import ProductList from '../components/ProductList'
-import PageHero from '../components/PageHero'
+import Filters from './Filters'
+import Sort from './Sort'
+import ProductList from './ProductList'
+
 
 const ProductsPage = () => { 
   return(
       <main>
-        <PageHero title='products'/>
         <Wrapper className='page'>
           <div className="section-center products">
             <Filters/>

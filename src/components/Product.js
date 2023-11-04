@@ -4,13 +4,15 @@ import { formatPrice } from '../utils/helpers'
 import { FaSearch } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 
+
 const Product = ({image, name, price, id, productsPage}) => {
-  const homeUrl = `products/${id}`
-  const productsUrl = `${id}`
+  const homeUrl = `/${id}`
+  const productsUrl = `/${id}`
+
   return(
     <Wrapper>
       <div className="container">
-        <img src={image}  alt='AhmedGad-Dev'/>
+        <img src={image}  alt='AhmedGad-Dev' loading='lazy'/>
         <Link to={`${productsPage?  productsUrl  :  homeUrl  } `} className='link'><FaSearch/></Link>
       </div>
       <footer>
@@ -39,7 +41,7 @@ const Wrapper = styled.article`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: var(--clr-primary-5);
+    background: var(--clr-grey-1);
     display: flex;
     align-items: center;
     justify-content: center;

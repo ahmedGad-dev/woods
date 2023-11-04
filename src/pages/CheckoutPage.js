@@ -9,7 +9,6 @@ const CheckoutPage = () => {
   const { cart } = useCartContext()
   return(
     <main>
-    
       <Wrapper className='page'>
         {cart.length < 1 ? (
           <div className='empty'>

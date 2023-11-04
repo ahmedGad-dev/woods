@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaShoppingCart, FaUserMinus, FaUserPlus } from 'react-icons/fa'
+import { FaShoppingCart} from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { useProductsContext } from '../context/products_context'
@@ -12,15 +12,14 @@ const CartButtons = () => {
   return(
     <Wrapper className='cart-btn-wrapper'>
       <Link to='cart' className='cart-btn'>
-        Cart
         <span className='cart-container'> 
           <FaShoppingCart/> 
           <span className='cart-value'>{total_items}</span>
         </span>
       </Link>
-      <button type='button' className='auth-btn'>
+     { /*<button type='button' className='auth-btn'>
         login <FaUserPlus/>
-      </button>
+  </button>*/}
     </Wrapper>
   )
 }
@@ -29,13 +28,12 @@ const Wrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  width: 225px;
+  margin-left: 15px;
 
   .cart-btn {
-    color: var(--clr-grey-1);
+    color: var(--clr-grey-3);
     font-size: 1.5rem;
     letter-spacing: var(--spacing);
-    color: var(--clr-grey-1);
     display: flex;
     link-style-type: none;
     align-items: center;
@@ -53,7 +51,7 @@ const Wrapper = styled.div`
     position: absolute;
     top: -10px;
     right: -16px;
-    background: var(--clr-primary-5);
+    background: 'black';
     width: 16px;
     height: 16px;
     display: flex;
@@ -61,7 +59,7 @@ const Wrapper = styled.div`
     justify-content: center;
     border-radius: 50%;
     font-size: 0.75rem;
-    color: var(--clr-white);
+    color: rgba(0, 0, 0, 0.54);
     padding: 12px;
   }
   .auth-btn {

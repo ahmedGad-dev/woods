@@ -11,6 +11,7 @@ const cart_reducer = (state, action) => {
       case ADD_TO_CART:
          const {id, color, amount, product} = action.payload
          const tempItem = state.cart.find((item) => item.id === id + color)
+         //update the item amount at cart
          if(tempItem){
            const tempCart = state.cart.map((item) => {
             if(item.id === id + color){
@@ -25,6 +26,7 @@ const cart_reducer = (state, action) => {
            })
             return {...state, cart: tempCart}
          }
+         //add new item to cart
          else {
           const newItem = {
             id: id + color,

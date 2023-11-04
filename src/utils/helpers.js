@@ -15,4 +15,10 @@ export const getUniqueValues = (products, type) => {
    return ['all', ...new Set(unique)]  //The set method ignores duplicate values so it will ignore all duplicates in the colors array
 }
 
-
+ export const getOnlyCategories = (products, type) => {
+   let unique = products.map((product) => product[type])
+   if(type === 'colors'){
+      unique = unique.flat() //The flat method returns a single array instead of a single array of an arrays     
+   }
+   return [...new Set(unique)]
+ }
