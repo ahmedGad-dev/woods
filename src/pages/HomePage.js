@@ -1,17 +1,15 @@
 import React from 'react'
-//import Hero from '../components/Hero'
-import FeaturedProducts from '../components/FeaturedProducts'
 import styled from 'styled-components'
-import Contact from '../components/Contact'
-import Services from '../components/Services'
 import ProductsPage from '../components/Products'
 import Carausel from '../materialUI/Carausel'
+import Separator from '../components/Separator'
 
 const HomePage = () => {
   return(
      <main>
        <Carausel/>
-       <ProductsPage/>
+       <Separator/>
+       <ProductsPage/>       
      </main>
   )
 }

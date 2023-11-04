@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-//import { PageHero } from '../components'
 import Logo from '../components/Logo'
 
 const AboutPage = () => {

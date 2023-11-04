@@ -29,16 +29,16 @@ const Carausel = () => {
     <Box p={5}>
       <Slider ref={slider} {...settings} sx={{}}>       
            {
-            products.map(prodcut =>(
+            products.map(product =>(
              <Card sx={{width:400 , maxWidth:400, margin:'40px'}}>
               <CardHeader
-               title={prodcut.name}
-               subheader="September 14, 2016"
+               title={product.name}
+               subheader={product.category.toUpperCase()}
               />
              {<CardMedia
                component="img"
                height="300"
-               image={prodcut.image}
+               image={product.image}
                alt="Paella dish"
                sx={{
                backgroundPosition:'center',
@@ -47,7 +47,7 @@ const Carausel = () => {
              />}           
              <CardContent>
                <Typography variant="body2" color="text.secondary">
-                  {prodcut.description.substr(0,150)}
+                  {product.description.substr(0,150)}
                </Typography>
              </CardContent>
              <CardActions disableSpacing>
