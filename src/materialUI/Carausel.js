@@ -26,13 +26,13 @@ const Carausel = () => {
         slidesToScroll: 1
       };
   return (
-    <Box p={5}>
+    <Box p={3}>
       <Slider ref={slider} {...settings} sx={{}}>       
            {
             products.map(product =>(
              <Card sx={{width:400 , maxWidth:400, margin:'40px'}}>
               <CardHeader
-               title={product.name}
+               title={product.name.toUpperCase()}
                subheader={product.category.toUpperCase()}
               />
              {<CardMedia

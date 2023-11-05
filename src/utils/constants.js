@@ -1,5 +1,6 @@
 import React from 'react'
 import { GiCompass, GiDiamondHard, GiStabbedNote } from 'react-icons/gi'
+
 export const links = [
   {
     id: 1,
@@ -14,6 +15,11 @@ export const links = [
   {
     id: 3,
     text: 'ABOUT',
+    url: '/about',
+  },
+  {
+    id: 4,
+    text: 'PORTFOLIO',
     url: '/about',
   },
 ]
@@ -40,6 +46,58 @@ export const services = [
     text:
       'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates, ea. Perferendis corrupti reiciendis nesciunt rerum velit autem unde numquam nisi',
   },
+]
+
+export const featuresData = [
+  {
+    id:1,
+    icon:<GiDiamondHard />,
+    title:'FIRST',
+    subTitile:'',
+    description:'THE BEST E-COMMERCE',
+ },
+ {
+   id:2,
+   icon:'',
+   title:'SECOND',
+   subTitile:'ITS',
+   description:'HELOO WORLD',
+ },
+ {
+  id:3,
+  icon:'',
+  title:'',
+  subTitile:'',
+  description:'',
+ },
+ {
+  id:4,
+  icon:'',
+  title:'',
+  subTitile:'',
+  description:'',
+ },
+ {
+  id:5,
+  icon:'',
+  title:'',
+  subTitile:'',
+  description:'',
+ },
+ {
+  id:6,
+  icon:'',
+  title:'',
+  subTitile:'',
+  description:'',
+ },
+ {
+    id:7,
+    icon:'',
+    title:'',
+    subTitile:'',
+    description:'',
+ }
 ]
 
 export const products_url = 'https://course-api.com/react-store-products'

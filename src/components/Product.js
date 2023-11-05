@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 
 
 const Product = ({image, name, price, id, productsPage}) => {
-  const homeUrl = `/${id}`
+  const homeUrl = `/products/${id}`
   const productsUrl = `/${id}`
 
   return(

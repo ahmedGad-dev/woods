@@ -8,20 +8,21 @@ import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
 import Badge from '@mui/material/Badge';
 import MenuItem from '@mui/material/MenuItem';
+import MenuIcon from '@mui/icons-material/Menu';
 import Menu from '@mui/material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
-import { Button, Stack} from '@mui/material';
+import {Stack} from '@mui/material';
 import {Link} from 'react-router-dom'
 import { links } from '../utils/constants'
 import CartButtons from '../components/CartButtons';
 import { getOnlyCategories } from '../utils/helpers';
 import { useProductsContext } from '../context/products_context';
 import Logo from '../components/Logo';
-import Divider from '@mui/material/Divider';
+import {Divider} from '@mui/material';
 
 
 const Search = styled('div')(({ theme }) => ({
@@ -64,7 +65,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function PrimarySearchAppBar() {
+export default function PrimarySearchAppBar(){
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
   const {products:all_products} = useProductsContext()
@@ -163,49 +164,53 @@ export default function PrimarySearchAppBar() {
       </MenuItem>
     </Menu>
   );
-  return (
+  return(
     <Box sx={{ flexGrow: 1}} direction='col' >
       <Stack sx={{
          display:'flex',
          flexDirection:'row',
-         justifyContent:'space-between',
-         padding:'16px',
+         justifyContent:'space-around',
+         padding:'3px',
          backgroundColor:'#363542',
          color:'white'
          }}
          direction='row'>
-           <Box display='flex' sx={{display:'flex', flexDirection:'row', justifyContent:'space-around'}}>
-               <Box><Typography variant='subtitle'>WOODS</Typography></Box>
-               <Divider orientation="vertical" flexItem sx={{color:'white'}}/>
-               <Box><Typography variant='subtitle'>WOODS</Typography></Box>           
+           <Box 
+             component='div' 
+             sx={{display:'flex', flexDirection:'row', justifyContent:'flex-start', width:'33%'}}>
+               <Typography variant='subtitle' mr={2} sx={{paddingRight:'15px', borderRight:'2px solid #d32f2f',fontWeight:'bold',letterSpacing:'1px',cursor:'pointer'}}>WOODS</Typography>            
+               <Typography variant='subtitle' mr={2} sx={{paddingRight:'15px', borderRight:'2px solid #d32f2f',letterSpacing:'1px',cursor:'pointer'}}>BABY & TODDLER</Typography>  
+               <Typography variant='subtitle' mr={2} sx={{paddingRight:'15px',letterSpacing:'1px',cursor:'pointer'}}>OFFICE</Typography>                                  
            </Box>
-           <Box display='flex' direction='row'>
-             <Typography variant='subtitle'>WOODS</Typography>
-               <Divider orientation="vertical" flexItem sx={{color:'white'}}/>
-             <Typography variant='subtitle'>WOODS</Typography>
+           <Box component='div'
+                sx={{display:'flex', flexDirection:'row', justifyContent:'center', width:'33%'}}>
+                 <Typography variant='subtitle' mr={1} sx={{width:'50px'}}>WOODS</Typography>                     
+                 <Typography variant='subtitle' mr={1} sx={{width:'50px' }}>WOODS</Typography>                                
            </Box>
-           <Box display='flex' direction='row'>
-             <Typography variant='subtitle'>WOODS</Typography>
-               <Divider orientation="vertical" flexItem sx={{color:'white'}}/>
-             <Typography variant='subtitle'>WOODS</Typography>
+           <Box
+            component='div'
+            sx={{display:'flex', flexDirection:'row', width:'33%', justifyContent:'flex-end'}}>
+               <Typography variant='subtitle' mr={2} sx={{width:'50px'}}>WOODS</Typography>           
+               <Typography variant='subtitle' sx={{width:'50px'}}>WOODS</Typography>                                     
            </Box>
       </Stack>
-      <AppBar position="static" sx={{
-      //  backgroundColor: 'hsl(22, 31%, 52%)',
+      <AppBar position="static" 
+      sx={{
+      //backgroundColor: 'hsl(22, 31%, 52%)',
         backgroundColor: 'white',
         padding:'20px'
       }}>
         <Toolbar>
           <Logo/>
-        { /* <IconButton
+        { <IconButton
             size="large"
             edge="start"
-            color='inherit'
+            color='#363542'
             aria-label="open drawer"
-            sx={{ mr: 2 }}
+            sx={{ml: 2, display: { xs: 'flex', md: 'none' }}}
           >
             <MenuIcon />
-          </IconButton>*/
+          </IconButton>
         }
           <Search>
             <SearchIconWrapper>
@@ -222,7 +227,7 @@ export default function PrimarySearchAppBar() {
           <Box > 
             {links.map(link => (
               //const {id, url, text} = link
-              <Link id={link.id} to={link.url} style={{color:'black', textDecoration:'none', fontSize:'20px', marginRight:'5px'}}>{link.text} </Link>
+              <Link id={link.id} to={link.url} style={{color:'black', textDecoration:'none', fontSize:'20px', marginRight:'5px'}}>{link.text}</Link>
              ))}
             </Box>
             <IconButton size="large" aria-label="show 0 new mails" color="black">
@@ -233,7 +238,7 @@ export default function PrimarySearchAppBar() {
             <IconButton
               size="large"
               aria-label="show 17 new notifications"
-              color="black"
+              color="#363542"
             >
               <Badge badgeContent={17} color="error">
                 <NotificationsIcon />
@@ -246,51 +251,38 @@ export default function PrimarySearchAppBar() {
               aria-controls={menuId}
               aria-haspopup="true"
               onClick={handleProfileMenuOpen}
-              color="black"
+              color="#363542"
             >
               <AccountCircle />
             </IconButton>
           </Box>
 
           <CartButtons/>
-          <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
+          <Box sx={{ display: { xs: 'flex', md: 'none' }}}>
             <IconButton
               size="large"
               aria-label="show more"
               aria-controls={mobileMenuId}
               aria-haspopup="true"
               onClick={handleMobileMenuOpen}
-              color="black"
+              color="#363542"
             >
               <MoreIcon />
             </IconButton>
-          </Box>
-         
+          </Box>       
         </Toolbar>
       </AppBar>
-      <Box display='flex' p={3} sx={{
+      <Box display='flex' sx={{
          backgroundColor:'white',
-         borderTop:'2px solid black',
+         borderTop:'1px solid #363542',
          flexDirection:'row',
          justifyContent: 'space-around',
          flexWrap: 'wrap'
          }}
          direction='row'>
-          {categories.map(category => (
-              <Typography variant='subtitle1' color='black' sx={{textTransform:'uppercase', cursor:'pointer'}}>{category}</Typography>
-          ))}
-           {/*<Typography variant='subtitle1' color='black' sx={{textTransform:'uppercase', marginRight:'35px', cursor:'pointer'}}>home furniture</Typography>
-           <Typography variant='subtitle1' color='black' sx={{textTransform:'uppercase', marginRight:'35px', cursor:'pointer'}}>office furniture</Typography>
-           <Typography variant='subtitle1' color='black' sx={{textTransform:'uppercase', marginRight:'35px', cursor:'pointer'}}>sofa</Typography>
-           <Typography variant='subtitle1' color='black' sx={{textTransform:'uppercase', marginRight:'35px', cursor:'pointer'}}>bedding</Typography>
-           <Typography variant='subtitle1' color='black' sx={{textTransform:'uppercase', marginRight:'35px', cursor:'pointer'}}>matresses</Typography>
-           <Typography variant='subtitle1' color='black' sx={{textTransform:'uppercase', marginRight:'35px', cursor:'pointer'}}>baby & toddler</Typography>
-           <Typography variant='subtitle1' color='black' sx={{textTransform:'uppercase', marginRight:'35px', cursor:'pointer'}}>kids</Typography>
-           <Typography variant='subtitle1' color='black' sx={{textTransform:'uppercase', marginRight:'35px', cursor:'pointer'}}>chairs</Typography>
-           <Typography variant='subtitle1' color='black' sx={{textTransform:'uppercase', marginRight:'35px', cursor:'pointer'}}>Bathroom</Typography>
-           <Typography variant='subtitle1' color='black' sx={{textTransform:'uppercase', marginRight:'35px', cursor:'pointer', color:'hsl(22, 31%, 52%)'}}>lighting</Typography>
-           <Typography variant='subtitle1' color='black' sx={{textTransform:'uppercase', marginRight:'35px', cursor:'pointer'}}>rugs</Typography>
-           <Typography variant='subtitle1' color='black' sx={{textTransform:'uppercase', marginRight:'35px', cursor:'pointer', color:'hsl(22, 31%, 52%)'}}>decor</Typography>*/}
+          {categories.map((category,i) => (
+            <Typography variant='subtitle1' sx={{textTransform:'uppercase', cursor:'pointer', fontWeight:'0.8', color:`${i===3||i===5? '#d32f2f': '#363542'}`}}>{category}</Typography>
+          ))}    
       </Box>
       {renderMobileMenu}
       {renderMenu}

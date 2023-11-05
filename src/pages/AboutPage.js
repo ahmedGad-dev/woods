@@ -1,11 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 import Logo from '../components/Logo'
-
+import PageHero from '../components/PageHero'
 const AboutPage = () => {
   return(
      <main>
       <Wrapper className='page section section-center'>
+         <PageHero title='about' />
          <Logo/>
          <article>
            <div className='title'>

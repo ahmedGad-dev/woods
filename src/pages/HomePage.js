@@ -3,13 +3,15 @@ import styled from 'styled-components'
 import ProductsPage from '../components/Products'
 import Carausel from '../materialUI/Carausel'
 import Separator from '../components/Separator'
+import Features from '../components/Features'
 
 const HomePage = () => {
   return(
      <main>
        <Carausel/>
        <Separator/>
-       <ProductsPage/>       
+       <ProductsPage/>  
+       <Features/>     
      </main>
   )
 }

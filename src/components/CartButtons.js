@@ -58,7 +58,7 @@ const Wrapper = styled.div`
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    font-size: 0.75rem;
+    font-size: 1rem;
     color: rgba(0, 0, 0, 0.54);
     padding: 12px;
   }
