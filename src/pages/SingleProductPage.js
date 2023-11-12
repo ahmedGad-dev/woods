@@ -87,13 +87,14 @@ const SingleProductPage = () => {
 }
 
 const Wrapper = styled.main`
+
   .product-center {
     display: grid;
     gap: 4rem;
     margin-top: 2rem;
   }
   .price {
-    color: var(--clr-primary-5);
+    color: #363542;
   }
   .desc {
     line-height: 2;

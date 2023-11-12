@@ -31,6 +31,7 @@ const Wrapper = styled.article`
   }
   img {
     width: 100%;
+    height:175px;
     display: block;
     object-fit: cover;
     border-radius: var(--radius);
@@ -75,7 +76,7 @@ const Wrapper = styled.article`
   }
 
   footer p {
-    color: var(--clr-primary-5);
+    color: #363542;
     letter-spacing: var(--spacing);
   }
 `

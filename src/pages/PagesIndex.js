@@ -6,6 +6,8 @@ import CartPage from "./CartPage";
 import ErrorPage from "./ErrorPage";
 import CheckoutPage from "./CheckoutPage";
 import PrivateRoute from './PrivateRoute'
+import CategoryPage from "./CategoryPage";
+import Shop from "./Shop";
 
 export{
     HomePage,
@@ -15,5 +17,7 @@ export{
     CartPage,
     ErrorPage,
     CheckoutPage,
-    PrivateRoute
+    CategoryPage,
+    PrivateRoute,
+    Shop
 }

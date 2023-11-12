@@ -8,60 +8,101 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { featuresData } from '../utils/constants';
 
+
 const Features = () => {
   return (
     <Paper>
       <Stack>
         {/* 3 cols features */}
-        <Box sx={{display:'flex', justifyContent:'space-around', margin:'20px', padding:'10px'}}>
+        <Box sx={{display:'flex',flexDirection:{xs:'column',md:'row'}, justifyContent:'space-around', padding:{xs:'10px', md:'40px'} , marginBottom:{xs:'0px', md:'10px'}}}>
            {
             featuresData.filter((_, index) => index < 3).map((item)=>(
-              <Card sx={{ maxWidth: 345,boxShadow:'none'}}>
-              <svg >{item.icon}</svg>
-              <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
+              <Card sx={{
+                  width:{xs:'auto' , md:250},       
+                  maxWidth: {xs:'auto' , md:350},
+                  boxShadow:'none',
+                  display:'flex',
+                  flexDirection:'column',
+                  justifyContent:'center',
+                  alignItems:'center',
+                  padding:'30px',
+                }}>
+                  {item.icon}         
+              <CardContent 
+                 sx={{
+                  padding:'0',
+                  marginY:'5px',
+                  display:'flex',
+                  textAlign:'center',
+                  flexDirection:'column',
+                  justifyContent:'center',
+                  alignItems:'center'
+                  }}>
+                <Typography gutterBottom variant="subtitle2" component="div" sx={{fontWeight:'bold'}}>
                   {item.title}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
                    {item.description}
                 </Typography>
+                <CardActions>
+                 <Button variant='outlined' sx={{color:'black',border:'none', }} size="small">Learn More</Button>
+                </CardActions>
               </CardContent>
-              <CardActions>
-                <Button size="small">Share</Button>
-                <Button size="small">Learn More</Button>
-              </CardActions>
              </Card>
             ))     
            } 
         {/* 3 cols features */}
         </Box>
         {/* 4 cols features */}
-        <Box sx={{display:'flex', justifyContent:'space-around', margin:'20px', padding:'10px', backgroundColor:'var(--clr-grey-9)'}}>
-        {
-            featuresData.filter((_, index) => index > 2).map((item)=>(
-             <Card sx={{ maxWidth: 345, boxShadow:'none',backgroundColor:'transparent' }}>
-              <CardMedia
-                component="img"
-                alt="green iguana"
-                height="140"
-                image="/static/images/cards/contemplative-reptile.jpg"
-              />
-              <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
-                  Lizard
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  Lizards are a widespread group of squamate reptiles, with over 6,000
-                  species, ranging across all continents except Antarctica
-                </Typography>
-              </CardContent>
+        <Box sx={{
+          display:'flex',
+          justifyContent:'space-around',
+          flexDirection:{xs:'column',md:'row'},
+          margin:'20px',
+          marginTop:{xs:0, md:'20px'},
+          padding:'20px', 
+          backgroundColor:'#f4f4f4',
+          }}>
+          {
+            featuresData.filter((_, index) => index > 2).map(((item,index)=>(
+              <Card sx={{
+                width:{xs:'auto'},       
+                maxWidth: {xs:'auto'},
+                boxShadow:'none',
+                display:'flex',
+                flexDirection:'column',
+                justifyContent:'center',
+                alignItems:'center',
+                backgroundColor:'transparent',
+                padding:{xs:'10px', md:'30px'},
+                borderRadius:'0',
+                borderTop: {xs:`${index === 0? 'none' :'2px solid #363542'}`, md:'none'},
+                borderRight:{xs:'none',md:`${index === 3? 'none' :'2px solid #363542'}`}
+              }}>
+                {item.icon}         
+             <CardContent 
+               sx={{
+                padding:'0',
+                marginY:{xs:'5px', md:'30px'},
+                display:'flex',
+                flexDirection:'column',
+                justifyContent:'center',
+                alignItems:'center',
+                textAlign:'center'
+                }}>
+               <Typography gutterBottom variant="subtitle2" component="div" sx={{fontWeight:'bold'}}>
+                {item.title}
+               </Typography>
+              <Typography variant="body2" color="text.secondary">
+                 {item.description}
+              </Typography>
               <CardActions>
-                <Button size="small">Share</Button>
-                <Button size="small">Learn More</Button>
+                <Button variant='outlined' sx={{color:'black',border:'none', }} size="small">Learn More</Button>
               </CardActions>
-             </Card>
-            ))
-        }
+             </CardContent>
+           </Card>
+            )))
+          }
         </Box>
       {/* 4 cols features */}
       </Stack>

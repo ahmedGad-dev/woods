@@ -13,6 +13,8 @@ import{
   CartPage,
   ProductsPage,
   CheckoutPage,
+  CategoryPage,
+  Shop
  } from './pages/PagesIndex'
 
 
@@ -23,10 +25,10 @@ function App() {
       <Sidebar/>
        <Routes>
          <Route path='/' element={<HomePage/>} />
-         <Route path='/about' element={<AboutPage/>} />
-         <Route path='/cart' element={<CartPage/>} />   
-         <Route path='/products' element={<ProductsPage/>} />  
-         <Route path='/:id' element={<SingleProductPage/>} /> 
+         <Route path='/about' element={<AboutPage/>}/>
+         <Route path='/cart' element={<CartPage/>}/>   
+         <Route path='/products/*' element={<Shop/>}/>   
+         <Route path='/:id' element={<SingleProductPage/>}/> 
          <Route path='/checkout' element={<CheckoutPage/>}></Route>    
        </Routes>
        <Footer/>

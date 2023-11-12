@@ -167,31 +167,33 @@ export default function PrimarySearchAppBar(){
   return(
     <Box sx={{ flexGrow: 1}} direction='col' >
       <Stack sx={{
-         display:'flex',
+         display:{xs:'none', lg:'flex'},
          flexDirection:'row',
          justifyContent:'space-around',
-         padding:'3px',
+         padding:'5px',
          backgroundColor:'#363542',
          color:'white'
          }}
          direction='row'>
            <Box 
              component='div' 
-             sx={{display:'flex', flexDirection:'row', justifyContent:'flex-start', width:'33%'}}>
-               <Typography variant='subtitle' mr={2} sx={{paddingRight:'15px', borderRight:'2px solid #d32f2f',fontWeight:'bold',letterSpacing:'1px',cursor:'pointer'}}>WOODS</Typography>            
+             sx={{display:'flex', flexDirection:'row', justifyContent:'flex-start', width:{md:'30%', xl:'20%'}, marginLeft:'15px'}}>
+               <Typography variant='subtitle' mr={2} sx={{paddingRight:'15px', borderRight:'2px solid #d32f2f',fontWeight:'bold',letterSpacing:'1px',cursor:'pointer'}}>
+                  <Link style={{color:'white'}} to='/'>WOODS</Link>
+                </Typography>            
                <Typography variant='subtitle' mr={2} sx={{paddingRight:'15px', borderRight:'2px solid #d32f2f',letterSpacing:'1px',cursor:'pointer'}}>BABY & TODDLER</Typography>  
                <Typography variant='subtitle' mr={2} sx={{paddingRight:'15px',letterSpacing:'1px',cursor:'pointer'}}>OFFICE</Typography>                                  
            </Box>
            <Box component='div'
-                sx={{display:'flex', flexDirection:'row', justifyContent:'center', width:'33%'}}>
-                 <Typography variant='subtitle' mr={1} sx={{width:'50px'}}>WOODS</Typography>                     
-                 <Typography variant='subtitle' mr={1} sx={{width:'50px' }}>WOODS</Typography>                                
+                sx={{display:'flex', flexDirection:'row', justifyContent:'center', width:{md:'60%', xl:'70%'}, fontFamily:'Open Sans',letterSpacing:'1px'}}>
+                 <Typography variant='subtitle' mr={1} sx={{textDecoration:'underline', marginRight:'15px',borderRight:'2px solid #d32f2f',paddingRight:'15px',fontSize:'16px',cursor:'pointer'}}>Office chairs starting for only $70</Typography>                     
+                 <Typography variant='subtitle' mr={1} sx={{textDecoration:'underline', marginRight:'15px',borderRight:'2px solid #d32f2f',paddingRight:'15px',fontSize:'16px',cursor:'pointer'}}>No interest installments for 6 months</Typography>
+                 <Typography variant='subtitle' mr={1} sx={{textDecoration:'underline', marginRight:'15px',paddingRight:'15px',fontSize:'16px',cursor:'pointer'}}>Buy luxury furniture</Typography>                                 
            </Box>
            <Box
             component='div'
-            sx={{display:'flex', flexDirection:'row', width:'33%', justifyContent:'flex-end'}}>
-               <Typography variant='subtitle' mr={2} sx={{width:'50px'}}>WOODS</Typography>           
-               <Typography variant='subtitle' sx={{width:'50px'}}>WOODS</Typography>                                     
+            sx={{display:'flex', flexDirection:'row', width:'10%', justifyContent:'flex-end',fontFamily:'Open Sans',letterSpacing:'1px', marginRight:'10px'}}>
+               <Link to='/products' style={{color:'white',textDecoration:'underline',fontWeight:'bold'}}>SHOP NOW</Link>                                              
            </Box>
       </Stack>
       <AppBar position="static" 
@@ -212,16 +214,21 @@ export default function PrimarySearchAppBar(){
             <MenuIcon />
           </IconButton>
         }
-          <Search>
-            <SearchIconWrapper>
+          <Box sx={{ flexGrow: 1}}/>
+          <Box sx={{marginX:{md:'10px',xl:'15px'}, display:{xs:'none', lg:'block'}}}>
+            <Typography sx={{color:'black', fontSize:{lg:'12px', xl:'16px'}}}>Search Furniture</Typography>
+            <Typography sx={{fontWeight:'bold',color:'black',fontSize:{lg:'10px', xl:'16px'}}}>Choose from 10000+ items </Typography>
+          </Box>
+          <Box sx={{backgroundColor:'white', width:'450px', marginRight:'50px', marginLeft:{ xs: '20px', lg: '0' }, border:'1px solid #363542', position:'relative'}}>
+            <SearchIconWrapper sx={{color:'#363542'}}>
               <SearchIcon />
             </SearchIconWrapper>
             <StyledInputBase
               placeholder="Search…"
               inputProps={{ 'aria-label': 'search' }}
             />
-          </Search>
-          <Box sx={{ flexGrow: 1}}/>
+          </Box>
+        
          
           <Box sx={{display: { xs: 'none', md: 'flex' }, alignContent:'center', alignItems:'center' }}>
           <Box > 
@@ -280,8 +287,8 @@ export default function PrimarySearchAppBar(){
          flexWrap: 'wrap'
          }}
          direction='row'>
-          {categories.map((category,i) => (
-            <Typography variant='subtitle1' sx={{textTransform:'uppercase', cursor:'pointer', fontWeight:'0.8', color:`${i===3||i===5? '#d32f2f': '#363542'}`}}>{category}</Typography>
+          {categories.map((category,i) => (        
+            <Link to={`products/${category}`} style={{textTransform:'uppercase', letterSpacing:'1px', fontSize:'22px', cursor:'pointer', fontWeight:'0.9', color:`${i===3||i===5? '#d32f2f': '#363542'}`}}> {category} </Link>
           ))}    
       </Box>
       {renderMobileMenu}

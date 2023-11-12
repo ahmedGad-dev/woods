@@ -136,7 +136,7 @@ const Wrapper = styled.article`
     .price {
       display: block;
       font-size: 1rem;
-      color: var(--clr-primary-5);
+      color: #363542;
       font-weight: 400;
     }
     .name {

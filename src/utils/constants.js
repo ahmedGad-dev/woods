@@ -1,5 +1,7 @@
 import React from 'react'
-import { GiCompass, GiDiamondHard, GiStabbedNote } from 'react-icons/gi'
+import { GiCompass, GiDiamondHard, GiStabbedNote, GiDirectorChair } from 'react-icons/gi'
+import {PiOfficeChairFill} from 'react-icons/pi'
+import {MdOutlineChair, } from 'react-icons/md'
 
 export const links = [
   {
@@ -48,55 +50,49 @@ export const services = [
   },
 ]
 
+const iconStyles = {width:'60px', height:'60px'}
 export const featuresData = [
   {
     id:1,
-    icon:<GiDiamondHard />,
-    title:'FIRST',
-    subTitile:'',
-    description:'THE BEST E-COMMERCE',
+    icon:<GiDiamondHard style={iconStyles}/>,
+    title:'See alternative matrix',
+    description:'Lorem ipsum dolor sit amet, sagna aliqua. Lorem ipsum dolor sit amet, sagna aliqua.',
  },
  {
    id:2,
-   icon:'',
-   title:'SECOND',
-   subTitile:'ITS',
-   description:'HELOO WORLD',
+   icon:<GiCompass style={iconStyles}/>,
+   title:'Outlets that will amaze you',
+   description:'Lorem ipsum dolor sit amet, sagna aliqua. Lorem ipsum dolor sit amet, sagna aliqua.',
  },
  {
   id:3,
-  icon:'',
-  title:'',
-  subTitile:'',
-  description:'',
+  icon:<GiStabbedNote style={iconStyles}/>,
+  title:'Let us help you decorate your home',
+  description:'Lorem ipsum dolor sit amet, sagna aliqua. Lorem ipsum dolor sit amet, sagna aliqua.',
  },
  {
   id:4,
-  icon:'',
-  title:'',
-  subTitile:'',
-  description:'',
+  icon:<GiDirectorChair style={iconStyles}/>,
+  title:'See our bedroom options',
+  description:'full bedrooms wiith single or double bed options designed carefully for you',
  },
  {
   id:5,
-  icon:'',
-  title:'',
-  subTitile:'',
-  description:'',
+  icon:<MdOutlineChair style={iconStyles}/>,
+  title:'Furniture in 20+ colors ',
+  description:'Lorem ipsum dolor sit amet, sagna aliqua. Lorem ipsum dolor sit amet, sagna aliqua.',
  },
  {
   id:6,
-  icon:'',
-  title:'',
-  subTitile:'',
-  description:'',
+  icon:<PiOfficeChairFill style={iconStyles}/>,
+  title:'Suitable for all tastes',
+  description:'Lorem ipsum dolor sit amet, sagna aliqua. Lorem ipsum dolor sit amet, sagna aliqua.',
  },
  {
     id:7,
-    icon:'',
-    title:'',
-    subTitile:'',
-    description:'',
+    icon:<MdOutlineChair style={iconStyles}/>,
+    title:'Kitchen and roofs',
+    description:'Lorem ipsum dolor sit amet, sagna aliqua. Lorem ipsum dolor sit amet, sagna aliqua.',
  }
 ]
 
