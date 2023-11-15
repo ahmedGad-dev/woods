@@ -4,6 +4,8 @@ import ProductsPage from '../components/Products'
 import Carausel from '../materialUI/Carausel'
 import Separator from '../components/Separator'
 import Features from '../components/Features'
+import Branches from '../components/Branches'
+import BranchesDivider from '../components/BranchesDivider'
 
 const HomePage = () => {
   return(
@@ -11,7 +13,9 @@ const HomePage = () => {
        <Carausel/>
        <Separator/>
        <ProductsPage/>  
-       <Features/>     
+       <Features/> 
+       <BranchesDivider/>
+       <Branches/>    
      </main>
   )
 }

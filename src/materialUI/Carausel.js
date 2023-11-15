@@ -8,6 +8,7 @@ import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
 import IconButton from '@mui/material/IconButton';
+import {Link}from 'react-router-dom';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
 import {BsArrowRight, BsArrowLeft} from 'react-icons/bs'
@@ -49,11 +50,11 @@ const Carausel = () => {
        ]
      };
   return(
-    <Paper p={6} sx={{marginY:{xs:'40px',xl:'50px'}}}>
+    <Paper sx={{marginY:{xs:'25px',xl:'35px'}, boxShadow:'none'}}>
       <Slider ref={slider} {...settings}>       
            {
             products.map(product =>(
-             <Card sx={{width:{xs:'400px', lg:'400px'}, minWidth:'400px', maxWidth:{xs:'600px', sm:'800px', xl:'500px'}, margin:{xs:'0px', xl:'30px'}, padding:'5px'}}>
+             <Card sx={{width:{xs:'400px', lg:'400px'}, minWidth:'400px', maxWidth:{xs:'600px', sm:'800px', xl:'500px'}, margin:{xs:'0px', xl:'30px'}, padding:'10px', borderRadius:'25px'}}>
               <CardHeader
                title={product.name.toUpperCase()}
                subheader={product.category.toUpperCase()}
@@ -74,13 +75,18 @@ const Carausel = () => {
                   {product.description.substr(0,150)}
                </Typography>
              </CardContent>
-             <CardActions disableSpacing>
+             <CardActions disableSpacing sx={{display:'flex', justifyContent:'space-between'}}>
+              <Box>
                <IconButton aria-label="add to favorites" sx={{color:'#d32f2f'}} title='Add to favourites'>
                  <FavoriteIcon />
                </IconButton>
                <IconButton aria-label="share" title='Share'>
                  <ShareIcon />
                </IconButton>
+              </Box>
+              <Box>
+               <Link to={`${product.id}`} className='btn' style={{marginRight:'5px'}}>See Product</Link>
+              </Box>
              </CardActions>        
           </Card>
          ))

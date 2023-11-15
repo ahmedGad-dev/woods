@@ -181,8 +181,12 @@ export default function PrimarySearchAppBar(){
                <Typography variant='subtitle' mr={2} sx={{paddingRight:'15px', borderRight:'2px solid #d32f2f',fontWeight:'bold',letterSpacing:'1px',cursor:'pointer'}}>
                   <Link style={{color:'white'}} to='/'>WOODS</Link>
                 </Typography>            
-               <Typography variant='subtitle' mr={2} sx={{paddingRight:'15px', borderRight:'2px solid #d32f2f',letterSpacing:'1px',cursor:'pointer'}}>BABY & TODDLER</Typography>  
-               <Typography variant='subtitle' mr={2} sx={{paddingRight:'15px',letterSpacing:'1px',cursor:'pointer'}}>OFFICE</Typography>                                  
+               <Typography variant='subtitle' mr={2} sx={{paddingRight:'15px', borderRight:'2px solid #d32f2f',letterSpacing:'1px',cursor:'pointer'}}>
+                  <Link to='products/kids' style={{letterSpacing:'1px',cursor:'pointer', color:'white'}}>Kids & TODDLER</Link>
+                </Typography>  
+               <Typography variant='subtitle' mr={2} sx={{paddingRight:'15px',letterSpacing:'1px',cursor:'pointer'}}>
+                  <Link style={{letterSpacing:'1px',cursor:'pointer', color:'white'}} to='products/office'>OFFICE</Link>
+                </Typography>                                  
            </Box>
            <Box component='div'
                 sx={{display:'flex', flexDirection:'row', justifyContent:'center', width:{md:'60%', xl:'70%'}, fontFamily:'Open Sans',letterSpacing:'1px'}}>

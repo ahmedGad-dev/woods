@@ -16,8 +16,8 @@ const Features = () => {
         {/* 3 cols features */}
         <Box sx={{display:'flex',flexDirection:{xs:'column',md:'row'}, justifyContent:'space-around', padding:{xs:'10px', md:'40px'} , marginBottom:{xs:'0px', md:'10px'}}}>
            {
-            featuresData.filter((_, index) => index < 3).map((item)=>(
-              <Card sx={{
+            featuresData.filter((_, index) => index < 3).map((item, _)=>(
+              <Card key={item.id} sx={{
                   width:{xs:'auto' , md:250},       
                   maxWidth: {xs:'auto' , md:350},
                   boxShadow:'none',
@@ -65,7 +65,7 @@ const Features = () => {
           }}>
           {
             featuresData.filter((_, index) => index > 2).map(((item,index)=>(
-              <Card sx={{
+              <Card key={item.id} sx={{
                 width:{xs:'auto'},       
                 maxWidth: {xs:'auto'},
                 boxShadow:'none',

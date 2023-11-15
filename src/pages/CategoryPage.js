@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState} from 'react'
 import { Paper, Stack, Box, Typography, Grid } from '@mui/material'
 import { useParams } from 'react-router-dom'
 import {useProductsContext} from '../context/products_context'
@@ -9,11 +9,12 @@ const CategoryPage = () => {
     let {category} = useParams()
     const {products:all_products} = useProductsContext()
     const [productCategory, setProductCategory] = useState([])
-
-     useEffect(() => {
-      let unique = all_products.filter(product => product.category === category )
-      setProductCategory(unique)
-    },[productCategory, category])
+    let unique
+   
+    useEffect(() => {
+     unique = all_products.filter(product => product.category === category )
+     setProductCategory(unique)
+   },[unique, category])
 
   return(
     <Paper>
