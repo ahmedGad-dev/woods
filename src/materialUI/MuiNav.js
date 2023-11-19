@@ -238,7 +238,7 @@ export default function PrimarySearchAppBar(){
           <Box > 
             {links.map(link => (
               //const {id, url, text} = link
-              <Link id={link.id} to={link.url} style={{color:'black', textDecoration:'none', fontSize:'20px', marginRight:'5px'}}>{link.text}</Link>
+              <Link id={link.id} to={link.url} style={{color:'black', textDecoration:'none', fontSize:'22px',  marginRight:'5px'}}>{link.text}</Link>
              ))}
             </Box>
             <IconButton size="large" aria-label="show 0 new mails" color="black">
@@ -292,7 +292,7 @@ export default function PrimarySearchAppBar(){
          }}
          direction='row'>
           {categories.map((category,i) => (        
-            <Link to={`products/${category}`} style={{textTransform:'uppercase', letterSpacing:'1px', fontSize:'22px', cursor:'pointer', fontWeight:'0.9', color:`${i===3||i===5? '#d32f2f': '#363542'}`}}> {category} </Link>
+            <Link to={`products/${category}`} style={{textTransform:'uppercase', letterSpacing:'1px', fontSize:'20px', padding:'5px', cursor:'pointer', fontWeight:'bold', color:`${i===3||i===5? '#d32f2f': '#363542'}`}}> {category} </Link>
           ))}    
       </Box>
       {renderMobileMenu}
