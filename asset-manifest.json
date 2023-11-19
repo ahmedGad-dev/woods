@@ -1,18 +1,27 @@
 {
   "files": {
-    "main.css": "/woods/static/css/main.1cf3d784.css",
-    "main.js": "/woods/static/js/main.0be2208e.js",
+    "main.css": "/woods/static/css/main.9511f236.css",
+    "main.js": "/woods/static/js/main.18ef3557.js",
     "static/js/787.28cb0dcd.chunk.js": "/woods/static/js/787.28cb0dcd.chunk.js",
-    "static/media/hero-bcg.jpeg": "/woods/static/media/hero-bcg.a876f19f6786a3aca992.jpeg",
-    "static/media/hero-bcg-2.jpeg": "/woods/static/media/hero-bcg-2.789918645915c8acb36f.jpeg",
-    "static/media/logo.svg": "/woods/static/media/logo.221f6b13e6eaaad5828372464f73a1a4.svg",
+    "static/media/separator.webp": "/woods/static/media/separator.cfee256587859dac6d72.webp",
+    "static/media/branches-6.jpeg": "/woods/static/media/branches-6.d1f5cf82e11cc3b98e3e.jpeg",
+    "static/media/branches-5.jpg": "/woods/static/media/branches-5.ab38ab38c0dd21a1ac86.jpg",
+    "static/media/branches-4.jpg": "/woods/static/media/branches-4.af5dfb9a93018632d23f.jpg",
+    "static/media/branches-7.jpg": "/woods/static/media/branches-7.f760a505ff779a460d2f.jpg",
+    "static/media/logo.png": "/woods/static/media/logo.cbc841604c34587e6f43.png",
+    "static/media/branches-1.jpg": "/woods/static/media/branches-1.6721e0d6f1e4907f4cbc.jpg",
+    "static/media/branches-2.jpg": "/woods/static/media/branches-2.de972dcafcffb55782cc.jpg",
+    "static/media/slick.svg": "/woods/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/woods/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/woods/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/woods/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/woods/index.html",
-    "main.1cf3d784.css.map": "/woods/static/css/main.1cf3d784.css.map",
-    "main.0be2208e.js.map": "/woods/static/js/main.0be2208e.js.map",
+    "main.9511f236.css.map": "/woods/static/css/main.9511f236.css.map",
+    "main.18ef3557.js.map": "/woods/static/js/main.18ef3557.js.map",
     "787.28cb0dcd.chunk.js.map": "/woods/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1cf3d784.css",
-    "static/js/main.0be2208e.js"
+    "static/css/main.9511f236.css",
+    "static/js/main.18ef3557.js"
   ]
 }
