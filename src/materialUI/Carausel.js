@@ -1,8 +1,8 @@
-import React, {useRef, useState} from 'react'
+import React, {useRef} from 'react'
 import Slider from "react-slick";
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
-import {Typography, Card, Stack, Box, Button, Paper} from "@mui/material"
+import {Typography, Card, Stack, Box,Paper} from "@mui/material"
 import CardHeader from '@mui/material/CardHeader';
 import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
@@ -13,11 +13,12 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
 import {BsArrowRight, BsArrowLeft} from 'react-icons/bs'
 import {useProductsContext} from '../context/products_context'
+import Loading from '../components/Loading'
 
 const Carausel = () => {
   const slider = useRef(null);
  
-  const {featured_products:products} = useProductsContext()
+  const {featured_products:products,products_loading:loading} = useProductsContext()
 
     const settings = {  
        className: "slider variable-width center",
@@ -42,19 +43,22 @@ const Carausel = () => {
         {
           breakpoint: 800,
           settings: {
-           vertical: true,
-           verticalSwiping: false,
            slidesToShow: 1,
           }
         }
        ]
      };
+
+    if(loading){
+      return <Loading />
+     }
+
   return(
-    <Paper sx={{marginY:{xs:'25px',xl:'35px'}, boxShadow:'none'}}>
+    <Paper sx={{marginY:{xs:'25px',xl:'35px'}, boxShadow:'none', }}>
       <Slider ref={slider} {...settings}>       
            {
             products.map(product =>(
-             <Card sx={{width:{xs:'400px', lg:'400px'}, minWidth:'400px', maxWidth:{xs:'600px', sm:'800px', xl:'500px'}, margin:{xs:'0px', xl:'30px'}, padding:'10px', borderRadius:'25px'}}>
+             <Card sx={{width:{xs:'400px', lg:'400px'}, minWidth:'400px', maxWidth:{xs:'600px', sm:'800px', xl:'500px'}, padding:'10px', borderRadius:'25px'}}>
               <CardHeader
                title={product.name.toUpperCase()}
                subheader={product.category.toUpperCase()}

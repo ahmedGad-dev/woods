@@ -4,10 +4,11 @@ import { useParams } from 'react-router-dom'
 import {useProductsContext} from '../context/products_context'
 import Product from '../components/Product'
 import PageHero from '../components/PageHero'
+import Loading from '../components/Loading'
 
 const CategoryPage = () => {
     let {category} = useParams()
-    const {products:all_products} = useProductsContext()
+    const {products:all_products,products_loading:loading} = useProductsContext()
     const [productCategory, setProductCategory] = useState([])
     let unique
    
@@ -15,6 +16,10 @@ const CategoryPage = () => {
      unique = all_products.filter(product => product.category === category )
      setProductCategory(unique)
    },[unique, category])
+
+   if(loading){
+    return <Loading />
+   }
 
   return(
     <Paper>

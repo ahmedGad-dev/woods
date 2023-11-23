@@ -1,4 +1,4 @@
-import React, { useEffect, useContext, useReducer } from 'react'
+import React, { useEffect, useContext, useReducer, useState } from 'react'
 import cart_reducer from '../reducers/cart_reducer'
 import {
   ADD_TO_CART,
@@ -28,6 +28,7 @@ const CartContext = React.createContext()
 
 export const CartProvider = ({ children }) => {
   const[state, dispatch] = useReducer(cart_reducer, initialState)
+  const[modalOpen, setModalOpen] = useState(false)
 
   const addToCart = (id, color, amount, product) => {
     dispatch({type: ADD_TO_CART, payload: {id, color, amount, product} })
@@ -53,13 +54,24 @@ export const CartProvider = ({ children }) => {
     localStorage.setItem('cart', JSON.stringify(state.cart))
   }, [state.cart])
 
+  useEffect(() => {
+    getLocalStorage()
+  },[state.cart])
+
+  const closeModal = () =>  setModalOpen(false)
+   
+  
+
   return (
     <CartContext.Provider value={{
       ...state,
       addToCart,
       toggleAmount,
       removeItem,
-      clearCart
+      clearCart, 
+      closeModal,
+      setModalOpen,
+      modalOpen
     }}>
       {children}
     </CartContext.Provider>

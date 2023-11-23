@@ -1,11 +1,21 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import Filters from '../components/Filters'
 import ProductList from '../components/ProductList'
 import Sort from '../components/Sort'
 import PageHero from '../components/PageHero'
+import { useCartContext } from '../context/cart_context'
+import Modal from '../components/Modal'
 
 const ProductsPage = () => { 
+  const {setModalOpen, modalOpen} = useCartContext()
+  
+  useEffect(() => {
+    setTimeout(() => {
+      setModalOpen(true)
+    }, 10000)
+  },[])
+
   return(
       <main>
         <PageHero title='products'/>
@@ -18,6 +28,7 @@ const ProductsPage = () => {
             </div>
           </div>         
         </Wrapper>
+      { modalOpen ? <Modal/> : null}
       </main>   
   )
 }

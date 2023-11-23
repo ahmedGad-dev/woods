@@ -1,7 +1,9 @@
 import React from 'react'
-import { GiCompass, GiDiamondHard, GiStabbedNote, GiDirectorChair } from 'react-icons/gi'
+import { GiCompass, GiDiamondHard, GiStabbedNote, GiKitchenKnives  } from 'react-icons/gi'
 import {PiOfficeChairFill} from 'react-icons/pi'
 import {MdOutlineChair, } from 'react-icons/md'
+import { IoBedOutline } from "react-icons/io5";
+
 
 export const links = [
   {
@@ -72,7 +74,7 @@ export const featuresData = [
  },
  {
   id:4,
-  icon:<GiDirectorChair style={iconStyles}/>,
+  icon:<IoBedOutline style={iconStyles}/>,
   title:'See our bedroom options',
   description:'full bedrooms wiith single or double bed options designed carefully for you',
  },
@@ -90,7 +92,7 @@ export const featuresData = [
  },
  {
     id:7,
-    icon:<MdOutlineChair style={iconStyles}/>,
+    icon:<GiKitchenKnives style={iconStyles}/>,
     title:'Kitchen and roofs',
     description:'Lorem ipsum dolor sit amet, sagna aliqua. Lorem ipsum dolor sit amet, sagna aliqua.',
  }

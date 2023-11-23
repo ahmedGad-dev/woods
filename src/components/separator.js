@@ -11,7 +11,8 @@ const styles = {
         height:{xs:'250px', md:'185px'},
         display:'flex',
         padding:'20px',
-        justifyContent:'space-around'
+        justifyContent:'space-around',
+        marginTop:'60px'
     }
 };
 

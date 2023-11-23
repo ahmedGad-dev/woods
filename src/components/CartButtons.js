@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import { useProductsContext } from '../context/products_context'
 import { useCartContext } from '../context/cart_context'
 //import { useUserContext } from '../context/user_context'
+import {BsCartXFill} from 'react-icons/bs'
 
 const CartButtons = () => {
   const {closeSidebar} = useProductsContext()
@@ -13,7 +14,7 @@ const CartButtons = () => {
     <Wrapper className='cart-btn-wrapper'>
       <Link to='cart' className='cart-btn'>
         <span className='cart-container'> 
-          <FaShoppingCart/> 
+         {total_items > 0? <FaShoppingCart/> :<BsCartXFill/>}
           <span className='cart-value'>{total_items}</span>
         </span>
       </Link>
