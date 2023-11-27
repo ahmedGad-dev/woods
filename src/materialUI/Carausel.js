@@ -24,11 +24,11 @@ const Carausel = () => {
         speed: 300,
         slidesToShow: 3,
         slidesToScroll: 1,
-        lazyLoad: true,
+        lazyLoad: false,
         initialSlide:1,
         autoPlay:true,
         autoplaySpeed: 3000,
-        dots: true,
+        dots: false,
         centerMode: false,
         vertical: false,
         responsive:[
