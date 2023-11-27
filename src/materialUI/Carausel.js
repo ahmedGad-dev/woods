@@ -16,12 +16,10 @@ import {useProductsContext} from '../context/products_context'
 import Loading from '../components/Loading'
 
 const Carausel = () => {
-  const slider = useRef(null);
- 
-  const {featured_products:products,products_loading:loading} = useProductsContext()
+    const slider = useRef(null);
+    const {featured_products:products,products_loading:loading} = useProductsContext()
 
     const settings = {  
-       className: "slider variable-width center",
         infinite: true,
         speed: 300,
         slidesToShow: 3,
