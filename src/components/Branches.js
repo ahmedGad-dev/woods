@@ -1,10 +1,10 @@
 import React, {useRef} from 'react'
 import { Box, Stack, Paper } from '@mui/material'
-import branches1 from '../assets/img/branches-1.jpg'
-import branches2 from '../assets/img/branches-2.jpg'
-import branches3 from '../assets/img/branches-5.jpg'
-import branches4 from '../assets/img/branches-7.jpg'
-import branches5 from '../assets/img/branches-6.jpeg'
+import branches1 from '../assets/img/branches-1.webp'
+import branches2 from '../assets/img/branches-2.webp'
+import branches3 from '../assets/img/branches-5.webp'
+import branches4 from '../assets/img/branches-7.webp'
+import branches5 from '../assets/img/branches-6.webp'
 import Slider from "react-slick";
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
@@ -19,7 +19,6 @@ const containerStyles = {
    alignItems: 'center',
    justifyContent: 'center',
    border: '1px solid black',
-   margin: '0 7.5px 15px',
    overflow: 'hidden',
    backgroundPosition:'center',
    backgroundSize:'cover',
@@ -76,16 +75,16 @@ const cardsData = [
 const Branches = () => {
    const slider = useRef(null);
    const settings = {  
-      className: "slider variable-width center",
+       className: "slider variable-width center",
        infinite: true,
        speed: 300,
        slidesToShow: 3,
        slidesToScroll: 1,
-       lazyLoad: true,
+       lazyLoad: false,
        initialSlide:1,
        autoPlay:true,
        autoplaySpeed: 3000,
-    //   dots: true,
+       dots: false,
        centerMode: false,
        vertical: false,
        responsive:[

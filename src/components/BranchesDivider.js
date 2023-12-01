@@ -1,6 +1,6 @@
 import React from 'react'
 import { Paper, Box,Typography, Stack} from '@mui/material'
-import bgImg from '../assets/img/branches-4.jpg'
+import bgImg from '../assets/img/branches-4.webp'
 import { GiDiamondHard } from "react-icons/gi";
 import { HiOutlineHomeModern } from "react-icons/hi2";
 import { BsFillAwardFill } from "react-icons/bs";

@@ -67,6 +67,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 export default function PrimarySearchAppBar(){
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
   const {products:all_products} = useProductsContext()
 
@@ -76,6 +77,10 @@ export default function PrimarySearchAppBar(){
 
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
+  };
+
+  const handleOpenNavMenu = (event) => {
+    setAnchorElNav(event.currentTarget);
   };
 
   const handleMobileMenuClose = () => {
@@ -89,6 +94,10 @@ export default function PrimarySearchAppBar(){
 
   const handleMobileMenuOpen = (event) => {
     setMobileMoreAnchorEl(event.currentTarget);
+  };
+
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(null);
   };
 
   const menuId = 'primary-search-account-menu';
@@ -170,7 +179,7 @@ export default function PrimarySearchAppBar(){
          display:{xs:'none', lg:'flex'},
          flexDirection:'row',
          justifyContent:'space-around',
-         padding:'5px',
+         padding:{xs:0,md:'5px'},
          backgroundColor:'#363542',
          color:'white'
          }}
@@ -182,7 +191,7 @@ export default function PrimarySearchAppBar(){
                   <Link style={{color:'white'}} to='/'>WOODS</Link>
                 </Typography>            
                <Typography variant='subtitle' mr={2} sx={{paddingRight:'15px', borderRight:'2px solid #d32f2f',letterSpacing:'1px',cursor:'pointer'}}>
-                  <Link to='products/kids' style={{letterSpacing:'1px',cursor:'pointer', color:'white'}}>Kids & TODDLER</Link>
+                  <Link to='products/kids' style={{letterSpacing:'1px',cursor:'pointer', color:'white'}}>KIDS & TODDLER</Link>
                 </Typography>  
                <Typography variant='subtitle' mr={2} sx={{paddingRight:'15px',letterSpacing:'1px',cursor:'pointer'}}>
                   <Link style={{letterSpacing:'1px',cursor:'pointer', color:'white'}} to='products/office'>OFFICE</Link>
@@ -202,28 +211,56 @@ export default function PrimarySearchAppBar(){
       </Stack>
       <AppBar position="static" 
       sx={{
-      //backgroundColor: 'hsl(22, 31%, 52%)',
         backgroundColor: 'white',
-        padding:'20px'
+        padding:{xs:'5px 25px', md:'20px'}
       }}>
-        <Toolbar>
+        <Toolbar sx={{padding:{xs:0, sm:'0 16px'}}}>
           <Logo/>
-        { <IconButton
+
+
+          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          <IconButton
             size="large"
             edge="start"
             color='#363542'
             aria-label="open drawer"
-            sx={{ml: 2, display: { xs: 'flex', md: 'none' }}}
+            onClick={handleOpenNavMenu}
+            sx={{marginLeft: {xs:0, sm:'15px'}, display: { xs: 'flex', md: 'none' }}}
           >
             <MenuIcon />
           </IconButton>
-        }
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorElNav}
+              anchorOrigin={{
+                vertical: 'bottom',
+                horizontal: 'left',
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'left',
+              }}
+              open={Boolean(anchorElNav)}
+              onClose={handleCloseNavMenu}
+              sx={{
+                display: { xs: 'block', md: 'none' },
+              }}
+            >
+              {links.map((link) => (
+                <MenuItem key={link.id} onClick={handleCloseNavMenu} sx={{color:'black',}}>
+                  <Link to={link.url} textAlign="center" style={{color:'black', fontSize:'14px'}}>{link.text}</Link>
+                </MenuItem>
+              ))}
+            </Menu>
+          </Box>
           <Box sx={{ flexGrow: 1}}/>
+
           <Box sx={{marginX:{md:'10px',xl:'15px'}, display:{xs:'none', lg:'block'}}}>
             <Typography sx={{color:'black', fontSize:{lg:'12px', xl:'16px'}}}>Search Furniture</Typography>
             <Typography sx={{fontWeight:'bold',color:'black',fontSize:{lg:'10px', xl:'16px'}}}>Choose from 10000+ items </Typography>
           </Box>
-          <Box sx={{backgroundColor:'white', width:'450px', marginRight:'50px', marginLeft:{ xs: '20px', lg: '0' }, border:'1px solid #363542', position:'relative'}}>
+          <Box sx={{backgroundColor:'white', width:'450px', marginRight:'50px', marginLeft:{ xs: '20px', lg: '0' }, display:{xs:'none', sm:'flex'}, border:'1px solid #363542', position:'relative'}}>
             <SearchIconWrapper sx={{color:'#363542'}}>
               <SearchIcon />
             </SearchIconWrapper>
@@ -231,10 +268,8 @@ export default function PrimarySearchAppBar(){
               placeholder="Search…"
               inputProps={{ 'aria-label': 'search' }}
             />
-          </Box>
-        
-         
-          <Box sx={{display: { xs: 'none', md: 'flex' }, alignContent:'center', alignItems:'center' }}>
+          </Box>     
+         <Box sx={{display: { xs: 'none', md: 'flex' }, alignContent:'center', alignItems:'center' }}>
           <Box > 
             {links.map(link => (
               //const {id, url, text} = link
@@ -266,7 +301,7 @@ export default function PrimarySearchAppBar(){
             >
               <AccountCircle />
             </IconButton>
-          </Box>
+         </Box>
 
           <CartButtons/>
           <Box sx={{ display: { xs: 'flex', md: 'none' }}}>
@@ -300,3 +335,44 @@ export default function PrimarySearchAppBar(){
     </Box>
   );
 }
+
+
+/*
+
+<Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          <IconButton
+            size="large"
+            edge="start"
+            color='#363542'
+            aria-label="open drawer"
+            onClick={handleOpenNavMenu}
+            sx={{marginLeft: {xs:0, sm:'15px'}, display: { xs: 'flex', md: 'none' }}}
+          >
+            <MenuIcon />
+          </IconButton>
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorElNav}
+              anchorOrigin={{
+                vertical: 'bottom',
+                horizontal: 'left',
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'left',
+              }}
+              open={Boolean(anchorElNav)}
+              onClose={handleCloseNavMenu}
+              sx={{
+                display: { xs: 'block', md: 'none' },
+              }}
+            >
+              {pages.map((page) => (
+                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                  <Typography textAlign="center">{page}</Typography>
+                </MenuItem>
+              ))}
+            </Menu>
+          </Box>
+          */

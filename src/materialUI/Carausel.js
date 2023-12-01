@@ -20,6 +20,7 @@ const Carausel = () => {
     const {featured_products:products,products_loading:loading} = useProductsContext()
 
     const settings = {  
+        className: "slider variable-width center",
         infinite: true,
         speed: 300,
         slidesToShow: 3,
@@ -56,7 +57,7 @@ const Carausel = () => {
       <Slider ref={slider} {...settings}>       
            {
             products.map(product =>(
-             <Card sx={{width:{xs:'400px', lg:'400px'}, minWidth:'400px', maxWidth:{xs:'600px', sm:'800px', xl:'500px'}, padding:'10px', borderRadius:'25px'}}>
+             <Card key={product.id} sx={{width:{xs:'400px', lg:'400px'}, minWidth:'400px', maxWidth:{xs:'600px', sm:'800px', xl:'500px'}, padding:{xs:0, md:'10px'}, borderRadius:'25px'}}>
               <CardHeader
                title={product.name.toUpperCase()}
                subheader={product.category.toUpperCase()}

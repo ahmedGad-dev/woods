@@ -8,13 +8,13 @@ import { useCartContext } from '../context/cart_context'
 import Modal from '../components/Modal'
 
 const ProductsPage = () => { 
-  const {setModalOpen, modalOpen} = useCartContext()
+  //const {setModalOpen, modalOpen} = useCartContext()
   
-  useEffect(() => {
+/*  useEffect(() => {
     setTimeout(() => {
       setModalOpen(true)
     }, 10000)
-  },[])
+  },[])*/
 
   return(
       <main>
@@ -28,7 +28,7 @@ const ProductsPage = () => {
             </div>
           </div>         
         </Wrapper>
-      { modalOpen ? <Modal/> : null}
+      { /*modalOpen ? <Modal/> : null*/}
       </main>   
   )
 }
